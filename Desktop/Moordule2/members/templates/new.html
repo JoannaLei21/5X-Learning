@@ -1,0 +1,27 @@
+{% extends "layout.html" %} {% block "content" %}
+
+<h1>建立會員資料</h1>
+
+<form method="POST" action="{% url 'members:index' %}">
+  {% csrf_token %} <br />
+  Name:
+  <br />
+  <input type="text" name="username" value="" />
+  <br />
+  <br />
+  Nikename:
+  <br />
+  <br />
+  <input type="text" name="nikename" value="" />
+  <br />
+  <br />
+  Interduce yourself:
+  <br />
+  <br />
+  <textarea name="content" value=""></textarea>
+  <br />
+  <br />
+  <button>建立會員資料</button>
+</form>
+
+{% endblock %}

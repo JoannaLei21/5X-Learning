@@ -1,0 +1,21 @@
+{% extends "layout.html" %} {% block "content" %}
+
+<h1>建立會員資料</h1>
+
+  Name:{{ member.username}}
+  <br />
+  <br />
+  Nikename:{{member.nikename}}
+  <br />
+  <br />
+  Interduce yourself:{{ member.content}}
+  <br />
+  <br />
+  <button>返回會員資料</button>
+  <form method="POST" action="{% url 'members:index' members.id %}">
+    {% csrf_token %} <br />
+    <button>更改會員資料</button>
+  </form>
+
+  {% endblock %}
+</form>

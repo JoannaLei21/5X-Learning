@@ -1,0 +1,15 @@
+{% extends "layout.html" %} {% block "content" %}
+
+<h1>會員資料</h1>
+
+<ul>
+  <a href="{% url 'members:file' members.id %}">
+    {% for member in members %}
+    <li>{{ member.username }}</li>
+    {% endfor %}
+  </a>
+</ul>
+
+<a href="{% url 'members:new' %}"><button>建立會員資料</button></a>
+
+{% endblock %}
